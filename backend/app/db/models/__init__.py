@@ -1,3 +1,5 @@
 from .user import User
+from .category import Categroy
+from .product import Product
 
-all = ["User"]
+all = ["User", "Category", "Product"]
