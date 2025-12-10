@@ -19,6 +19,11 @@ class Settings(BaseSettings):
     SMTP_USER: str | None = None
     SMTP_PASS: str | None = None
 
+
+    STRIPE_SECRET_KEY: str | None = None
+    STRIPE_WEBHOOK_SECRET: str | None = None
+
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"

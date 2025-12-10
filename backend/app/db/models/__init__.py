@@ -5,6 +5,8 @@ from .cart import Cart
 from .cart_item import CartItem
 from .order import Order
 from .order_item import OrderItem
+from .payment import Payment
 
 
-all = ["User", "Category", "Product", "Cart", "CartItem", "Order", "OrderItem"]
+
+all = ["User", "Category", "Product", "Cart", "CartItem", "Order", "OrderItem", "Payment"]
