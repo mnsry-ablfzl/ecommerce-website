@@ -1,0 +1,19 @@
+from fastapi import APIRouter, UploadFile, File
+import shutil
+import uuid
+import os
+
+router = APIRouter()
+
+UPLOAD_DIR = "uploads"
+
+@router.post("/product-image")
+async def upload_product_image(file: UploadFile = File(...)):
+    ext = file.filename.split(".")[-1]
+    filename = f"{uuid.uuid4()}.{ext}"
+    file_path = os.path.join(UPLOAD_DIR, filename)
+
+    with open(file_path, "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+
+    return {"url": f"/static/{filename}"}

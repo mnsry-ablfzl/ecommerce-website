@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from typing import List
-from app.schemas.product import ProductResponse
+from app.schemas.products import ProductResponse
 
 
 class OrderItemResponse(BaseModel):
@@ -10,7 +10,7 @@ class OrderItemResponse(BaseModel):
     price: float
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class OrderResponse(BaseModel):
@@ -20,4 +20,4 @@ class OrderResponse(BaseModel):
     items: List[OrderItemResponse]
 
     class Config:
-        orm_mode = True
+        from_attributes = True

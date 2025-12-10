@@ -16,11 +16,11 @@ class CartItemResponse(BaseModel):
     product: ProductResponse
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class CartResponse(BaseModel):
     id: int
     items: List[CartItemResponse]
 
     class Config:
-        orm_mode = True
+        from_attributes = True
