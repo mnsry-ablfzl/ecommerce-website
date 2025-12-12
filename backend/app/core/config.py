@@ -24,6 +24,10 @@ class Settings(BaseSettings):
     STRIPE_SECRET_KEY: str | None = None
     STRIPE_WEBHOOK_SECRET: str | None = None
 
+    PASSWORD_RESET_TOKEN_EXPIRE_MINUTES: int = 30
+    FRONTEND_RESET_PASSWORD_URL: str
+
+
 
     class Config:
         env_file = ".env"

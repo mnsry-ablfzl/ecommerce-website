@@ -7,7 +7,13 @@ from .order import Order
 from .order_item import OrderItem
 from .payment import Payment
 from .refresh_token import RefreshToken
+from .password_reset import PasswordResetToken
 
 
 
-all = ["User", "Category", "Product", "Cart", "CartItem", "Order", "OrderItem", "Payment", "RefreshToken"]
+
+all = [
+    "User", "Category", "Product", "Cart",
+    "CartItem", "Order", "OrderItem", "Payment", 
+    "RefreshToken", "PasswordResetToken"
+    ]

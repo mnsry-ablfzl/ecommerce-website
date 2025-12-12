@@ -5,9 +5,16 @@ from app.api.v1.routes import (
     payments, admin_products, 
     admin_categories, admin_orders
 )
+from app.api.v1.routes import password_reset
 
 app = FastAPI(title="Ecommerce API")
 
+
+app.include_router(
+    password_reset.router,
+    prefix="/api/v1/password-reset",
+    tags=["Password Reset"]
+)
 
 app.include_router(auth.router, prefix="/api/v1/auth", tags=["Auth"])
 app.include_router(products.router, prefix="/api/v1/products", tags=["Products"])
