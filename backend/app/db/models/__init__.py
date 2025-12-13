@@ -9,6 +9,8 @@ from .payment import Payment
 from .refresh_token import RefreshToken
 from .password_reset import PasswordResetToken
 from .email_verification import EmailVerificationToken
+from .address import Address
+
 
 
 
@@ -16,5 +18,6 @@ from .email_verification import EmailVerificationToken
 all = [
     "User", "Category", "Product", "Cart",
     "CartItem", "Order", "OrderItem", "Payment", 
-    "RefreshToken", "PasswordResetToken", "EmailVerificationToken"
+    "RefreshToken", "PasswordResetToken", "EmailVerificationToken",
+    "Address"
     ]

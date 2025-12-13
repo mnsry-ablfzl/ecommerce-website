@@ -23,3 +23,12 @@ def create_user(payload: UserCreate, db: Session):
     send_verification_email(user, db)
 
     return new_user
+
+
+def update_profile(user, payload, db):
+    for key, value in payload.dict(exclude_unset=True).items():
+        setattr(user, key, value)
+
+    db.commit()
+    db.refresh(user)
+    return user

@@ -7,12 +7,15 @@ from app.api.v1.routes import (
 )
 from app.api.v1.routes import password_reset
 from app.api.v1.routes import email_verification
+from app.api.v1.routes import profile, addresses
 
 app = FastAPI(title="Ecommerce API")
 
 
 
 
+app.include_router(profile.router, prefix="/api/v1/profile", tags=["Profile"])
+app.include_router(addresses.router, prefix="/api/v1/addresses", tags=["Addresses"])
 app.include_router(
     email_verification.router,
     prefix="/api/v1/email-verification",
