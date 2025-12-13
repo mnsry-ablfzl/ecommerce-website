@@ -8,6 +8,7 @@ from .order_item import OrderItem
 from .payment import Payment
 from .refresh_token import RefreshToken
 from .password_reset import PasswordResetToken
+from .email_verification import EmailVerificationToken
 
 
 
@@ -15,5 +16,5 @@ from .password_reset import PasswordResetToken
 all = [
     "User", "Category", "Product", "Cart",
     "CartItem", "Order", "OrderItem", "Payment", 
-    "RefreshToken", "PasswordResetToken"
+    "RefreshToken", "PasswordResetToken", "EmailVerificationToken"
     ]

@@ -13,6 +13,8 @@ def authenticate_user(email: str, password: str, db: Session):
         return None
     if not verify_password(password, user.hashed_password):
         return None
+    if not user.is_verified:
+        raise ValueError("Email not verified")
     
     return user
 

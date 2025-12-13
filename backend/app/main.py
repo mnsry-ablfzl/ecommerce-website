@@ -6,16 +6,23 @@ from app.api.v1.routes import (
     admin_categories, admin_orders
 )
 from app.api.v1.routes import password_reset
+from app.api.v1.routes import email_verification
 
 app = FastAPI(title="Ecommerce API")
 
 
+
+
+app.include_router(
+    email_verification.router,
+    prefix="/api/v1/email-verification",
+    tags=["Email Verification"]
+)
 app.include_router(
     password_reset.router,
     prefix="/api/v1/password-reset",
     tags=["Password Reset"]
 )
-
 app.include_router(auth.router, prefix="/api/v1/auth", tags=["Auth"])
 app.include_router(products.router, prefix="/api/v1/products", tags=["Products"])
 app.include_router(cart.router, prefix="/api/v1/cart", tags=["Cart"])

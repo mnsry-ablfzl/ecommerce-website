@@ -27,6 +27,9 @@ class Settings(BaseSettings):
     PASSWORD_RESET_TOKEN_EXPIRE_MINUTES: int = 30
     FRONTEND_RESET_PASSWORD_URL: str
 
+    EMAIL_VERIFICATION_EXPIRE_HOURS: int = 24
+    FRONTEND_VERIFY_EMAIL_URL: str
+
 
 
     class Config:
